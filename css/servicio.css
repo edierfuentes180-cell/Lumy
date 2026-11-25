@@ -1,0 +1,217 @@
+/* ==========================================================
+   Lumy · Salón de belleza — Reservar cita / Servicios
+   ========================================================== */
+
+/* ---------- Variables de diseño ---------- */
+:root {
+  --bg: #fbf6f3;            /* fondo general crema rosado */
+  --surface: #ffffff;       /* tarjetas y panel */
+  --sidebar: #f7efec;       /* barra lateral */
+  --ink: #1d1d1f;           /* texto principal */
+  --muted: #7a7471;         /* texto secundario */
+  --line: #ebe2de;          /* bordes suaves */
+  --accent: #d9776a;        /* coral del botón y selección */
+  --accent-soft: #fbe9e5;   /* fondo de tarjeta seleccionada */
+  --header: #111111;        /* barra superior */
+  --radius: 12px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Encabezado ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 32px;
+  height: 64px;
+  background: var(--header);
+  color: #fff;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand__icon { width: 30px; height: 30px; color: #f0c9c2; }
+.brand__text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand__text strong { font-size: 20px; font-weight: 600; letter-spacing: .02em; }
+.brand__text small { font-size: 7px; letter-spacing: .18em; color: #bdb5b2; }
+
+.menu { display: flex; align-items: center; gap: 32px; font-size: 14px; }
+.menu a { padding: 22px 0 19px; border-bottom: 2px solid transparent; color: #e9e4e2; }
+.menu a:hover { color: #fff; }
+.menu a.is-active { color: #fff; border-bottom-color: #fff; }   /* Servicios subrayado */
+
+.user { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.user__avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: radial-gradient(circle at 50% 38%, #e2b9a0 0 30%, transparent 31%),
+              linear-gradient(160deg, #5a3a2b, #2a1a14);
+  border: 1px solid #333;
+}
+.user__caret { color: #bdb5b2; }
+
+/* ---------- Estructura principal (3 columnas) ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
+  min-height: calc(100vh - 64px);
+}
+
+/* ---------- Barra lateral ---------- */
+.sidebar {
+  background: var(--sidebar);
+  border-right: 1px solid var(--line);
+  padding: 20px 20px 32px;
+}
+
+.back {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--muted);
+  padding-bottom: 16px; margin: 0 -20px 24px; padding-left: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+
+.step {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px; border-radius: 10px;
+}
+.step__num {
+  flex: none; width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 600;
+  background: #ece5e2; color: #6d6663;
+}
+.step__txt { display: flex; flex-direction: column; gap: 2px; }
+.step__txt strong { font-size: 14px; font-weight: 600; }
+.step__txt small { font-size: 12px; color: var(--muted); }
+
+.step.is-current { background: var(--surface); box-shadow: 0 1px 2px rgba(60, 30, 20, .06); }
+.step.is-current .step__num { background: var(--accent); color: #fff; }
+
+/* ---------- Contenido: servicios ---------- */
+.content { padding: 32px 36px; }
+
+.content h1 { margin: 0 0 22px; font-size: 22px; font-weight: 600; letter-spacing: -.01em; }
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px;
+  min-height: 230px; padding: 32px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: border-color .15s, background .15s, box-shadow .15s;
+}
+.card svg { width: 56px; height: 56px; color: #2b2523; }
+.card__name { font-size: 16px; font-weight: 500; }
+.card__price { font-size: 16px; font-weight: 600; }
+.card:hover { border-color: #e2c3bc; box-shadow: 0 4px 14px rgba(120, 60, 45, .08); }
+
+.card.is-selected {
+  background: var(--accent-soft);
+  border: 1.5px solid var(--accent);
+}
+
+/* ---------- Panel de detalle ---------- */
+.detail {
+  display: flex; flex-direction: column;
+  padding: 24px 24px 32px;
+  border-left: 1px solid var(--line);
+}
+
+.detail__photo {
+  aspect-ratio: 4 / 3.1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: #d8c8be;   /* color mientras carga la foto */
+}
+.detail__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail__body { padding-top: 18px; }
+.detail h2 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
+.detail p  { margin: 0 0 16px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+.meta { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 13px; }
+.meta li { display: flex; align-items: center; gap: 10px; }
+.meta svg { color: #3b3330; flex: none; }
+
+.btn-next {
+  display: block; text-align: center; text-decoration: none;
+  margin-top: auto;
+  width: 100%; padding: 14px 18px;
+  border: 0; border-radius: 10px;
+  background: var(--accent); color: #fff;
+  font-size: 14px; font-weight: 600;
+  transition: filter .15s;
+}
+.btn-next:hover { filter: brightness(.95); }
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+/* Tablet: el panel de detalle pasa debajo del contenido */
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 220px minmax(0, 1fr); }
+  .detail {
+    grid-column: 1 / -1;
+    flex-direction: row; flex-wrap: wrap; align-items: flex-start; gap: 20px;
+    border-left: 0; border-top: 1px solid var(--line);
+  }
+  .detail__photo { flex: 0 0 260px; }
+  .detail__body { flex: 1 1 240px; padding-top: 0; }
+  .btn-next { margin-top: 0; flex: 1 1 100%; }
+}
+
+/* Móvil: una sola columna y menú compacto */
+@media (max-width: 760px) {
+  .topbar { height: auto; flex-wrap: wrap; padding: 12px 16px; gap: 8px 16px; }
+  .menu { order: 3; width: 100%; gap: 20px; overflow-x: auto; font-size: 13px; }
+  .menu a { padding: 8px 0; white-space: nowrap; }
+  .user__name { display: none; }
+
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { border-right: 0; border-bottom: 1px solid var(--line); padding: 16px; }
+  .back { margin: 0 -16px 16px; padding-left: 16px; }
+  .steps { grid-auto-flow: column; grid-auto-columns: 1fr; overflow-x: auto; }
+  .step { flex-direction: column; text-align: center; gap: 6px; padding: 10px 6px; }
+  .step__txt small { display: none; }
+
+  .content { padding: 24px 16px; }
+  .services { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card { min-height: 170px; padding: 20px 12px; }
+  .card svg { width: 44px; height: 44px; }
+  .card__name, .card__price { font-size: 14px; }
+
+  .detail { padding: 20px 16px 28px; }
+  .detail__photo { flex: 1 1 100%; }
+}

@@ -1,0 +1,95 @@
+  :root {
+    --rosa: #c96a6a;
+    --rosa-oscuro: #b45656;
+    --rosa-claro: #f3dcd8;
+    --crema: #fbf6f4;
+    --negro: #1a1a1a;
+    --gris: #5d5d5d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; color: var(--negro); background: var(--crema); }
+  a { text-decoration: none; color: inherit; }
+  h1, h2, .logo { font-family: 'Playfair Display', serif; }
+ 
+  /* Header */
+  header { background: var(--negro); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 12px 40px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-size: 26px; }
+  .logo small { display: block; font-family: 'Inter', sans-serif; font-size: 8px; letter-spacing: 1px; color: #bbb; }
+  nav { display: flex; gap: 32px; font-size: 14px; }
+  nav a { padding: 6px 0; }
+  nav a.activo { color: var(--rosa-claro); border-bottom: 2px solid var(--rosa); }
+  .acciones { display: flex; align-items: center; gap: 20px; }
+  .btn-sesion { background: var(--rosa-claro); color: var(--negro); padding: 10px 22px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+ 
+  /* Hero */
+  .hero { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 440px; padding: 40px; background: linear-gradient(90deg, #f6e3df 0%, #f6e3df 45%, transparent 70%), linear-gradient(135deg, #3a2a2a, #8c5a5a 60%, #e8b9b0); overflow: hidden; }
+  /* Reemplaza el fondo derecho por tu foto: background-image: url('salon.jpg'); */
+  .hero-texto { position: relative; z-index: 1; max-width: 460px; }
+  .hero h1 { font-size: 48px; line-height: 1.1; margin-bottom: 18px; }
+  .hero p { font-size: 18px; line-height: 1.5; margin-bottom: 28px; }
+  .btn-cita { display: inline-block; background: var(--rosa); color: #fff; padding: 16px 36px; border-radius: 999px; font-weight: 500; font-size: 16px; transition: background .2s; }
+  .btn-cita:hover { background: var(--rosa-oscuro); }
+  .neon { justify-self: end; align-self: start; font-family: 'Playfair Display', serif; font-style: italic; font-size: 28px; color: #ffd9ec; text-shadow: 0 0 8px #ff7bc0, 0 0 18px #ff4fa8; text-align: center; max-width: 220px; }
+ 
+  .beneficios { display: flex; gap: 36px; margin-top: 36px; }
+  .beneficio { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; }
+  .beneficio b { display: block; font-size: 14px; }
+  .beneficio span { color: var(--gris); }
+  .beneficio svg { flex: none; width: 26px; height: 26px; stroke: var(--negro); fill: none; stroke-width: 1.5; }
+ 
+  /* Servicios */
+  .servicios { padding: 40px; text-align: center; }
+  .servicios h2 { font-size: 32px; margin-bottom: 8px; }
+  .servicios > p { color: var(--gris); margin-bottom: 28px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1100px; margin: 0 auto; }
+  .tarjeta { background: #fff; border-radius: 10px; overflow: hidden; text-align: left; box-shadow: 0 2px 10px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+  .foto { height: 190px; background: linear-gradient(160deg, #8a5a44, #d9a98d); }
+  /* Para usar fotos reales: .foto { background: url('corte.jpg') center/cover; } o una etiqueta <img> */
+  .tarjeta:nth-child(2) .foto { background: linear-gradient(160deg, #a8745c, #e6c3a6); }
+  .tarjeta:nth-child(3) .foto { background: linear-gradient(160deg, #6b4330, #d49a6a); }
+  .tarjeta:nth-child(4) .foto { background: linear-gradient(160deg, #2a1d1a, #6e4b3c); }
+  .info { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .info h3 { font-size: 16px; }
+  .info p { font-size: 13px; color: var(--gris); line-height: 1.4; }
+  .precio { font-size: 13px; font-weight: 600; margin: 4px 0 10px; }
+  .btn-reservar { margin-top: auto; background: var(--rosa); color: #fff; text-align: center; padding: 9px; border-radius: 999px; font-size: 13px; transition: background .2s; }
+  .btn-reservar:hover { background: var(--rosa-oscuro); }
+  .ver-todos { display: inline-block; margin-top: 28px; padding: 10px 40px; border: 1px solid var(--rosa); color: var(--rosa); border-radius: 999px; font-size: 14px; }
+  .ver-todos:hover { background: var(--rosa); color: #fff; }
+ 
+  a:focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; }
+ 
+  /* Responsive */
+  @media (max-width: 900px) {
+    header { flex-wrap: wrap; gap: 12px; padding: 12px 20px; }
+    nav { gap: 18px; order: 3; width: 100%; justify-content: center; }
+    .hero { grid-template-columns: 1fr; padding: 32px 20px; background: linear-gradient(180deg, #f6e3df 60%, #e8b9b0); }
+    .neon { display: none; }
+    .hero h1 { font-size: 38px; }
+    .beneficios { flex-wrap: wrap; gap: 20px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+
+ /* Botón siguiente */
+.btn-siguiente {
+  display: inline-block;
+  margin: 50px 0 20px;
+  padding: 10px 40px;
+  background: var(--rosa);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-siguiente:hover { background: var(--rosa-oscuro); }
+
+.contenedor-siguiente {
+  text-align: center;
+}

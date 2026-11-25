@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cita confirmada – Lumy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/lumy.css">
+<link rel="stylesheet" href="./css/confirmacion.css">
+</head>
+<body>
+
+<header>
+  <a href="inicio.html" class="logo"><span>Lumy<small>Salón de belleza</small></span></a>
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="servicio.html">Servicios</a>
+    <a href="reservar.html" >Reservar cita</a>
+    <a href="mis_citas.html">Mis citas</a>
+    <a href="confirmacion.html" class="activo">confirmación</a>
+  </nav>
+  <div class="acciones">
+    <a href="index.html" class="btn-sesion">Cerrar sesión</a>
+  </div>
+</header>
+
+<main class="confirmacion">
+
+  <div class="confirmacion-encabezado">
+    <div class="check" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </div>
+    <h1>¡Tu cita está confirmada!</h1>
+    <p>Te esperamos en Lumy. Guarda estos datos por si necesitas cambiar o cancelar tu reserva.</p>
+  </div>
+
+  <section class="resumen" aria-labelledby="titulo-resumen">
+    <h2 id="titulo-resumen">Resumen de tu cita</h2>
+    <dl>
+      <div class="fila">
+        <dt>Servicio</dt>
+        <dd>Corte de cabello</dd>
+      </div>
+      <div class="fila">
+        <dt>Profesional</dt>
+        <dd>Valentina Rojas</dd>
+      </div>
+      <div class="fila">
+        <dt>Fecha</dt>
+        <dd>Sábado 28 de noviembre de 2026</dd>
+      </div>
+      <div class="fila">
+        <dt>Hora</dt>
+        <dd>3:00 p. m.</dd>
+      </div>
+      <div class="fila">
+        <dt>Código de reserva</dt>
+        <dd>LUM-2811</dd>
+      </div>
+      <div class="fila total">
+        <dt>Valor desde</dt>
+        <dd>$15.000</dd>
+      </div>
+    </dl>
+  </section>
+
+  <p class="nota">Llega 10 minutos antes de tu hora. Puedes reprogramar o cancelar tu cita desde “Mis citas”.</p>
+
+  <div class="confirmacion-acciones">
+    <a href="mis_citas.html" class="btn-cita">Ver mis citas</a>
+    <a href="inicio.html" class="ver-todos">Volver al inicio</a>
+  </div>
+
+</main>
+
+</body>
+</html>

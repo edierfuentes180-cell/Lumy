@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumy · Servicios</title>
+  <link rel="stylesheet" href="./css/servicio.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Lumy, salón de belleza">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>
+      <span class="brand__text">
+        <strong>Lumy</strong>
+        <small>SALÓN DE BELLEZA</small>
+      </span>
+    </a>
+
+    <nav class="menu" aria-label="Principal">
+      <a href="inicio.html">Inicio</a>
+      <a href="#" class="is-active" aria-current="page">Servicios</a>
+      <a href="reservar.html">Reservar cita</a>
+      <a href="mis_citas.html">Mis citas</a>
+      <a href="confirmacion.html">Confirmacion</a>
+    </nav>
+
+    <div class="acciones">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      <a href="#" class="btn-sesion">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- ===== BARRA LATERAL: PASOS ===== -->
+    <aside class="sidebar">
+      <a class="back" href="#"><span aria-hidden="true">←</span> Reservar cita</a>
+
+      <ol class="steps">
+        <li class="step is-current">
+          <span class="step__num">1</span>
+          <span class="step__txt"><strong>Servicio</strong><small>Selecciona el servicio</small></span>
+        </li>
+        <li class="step">
+          <span class="step__num">2</span>
+          <span class="step__txt"><strong>Fecha, hora y profesional</strong><small>Elige un horario</small></span>
+        </li>
+
+        <li class="step">
+          <span class="step__num">3</span>
+          <span class="step__txt"><strong>Mis citas</strong><small>Revisa y confirma</small></span>
+        </li>
+
+        <li class="step">
+          <span class="step__num">4</span>
+          <span class="step__txt"><strong>Confirmación</strong><small>Revisa y confirma</small></span>
+        </li>
+      </ol>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL: SERVICIOS ===== -->
+    <main class="content">
+      <h1>1. Selecciona el servicio</h1>
+
+      <div class="services">
+
+        <button class="card is-selected" type="button">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="31" r="4.5"/><circle cx="29" cy="31" r="4.5"/><path d="M14 27.5 28 6M26 27.5 12 6"/></svg>
+          <span class="card__name">Corte de cabello</span>
+          <span class="card__price">$15.000</span>
+        </button>
+
+        <button class="card" type="button">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12c0-3 3-5 7-5h12c5 0 9 3 9 8s-4 8-9 8h-4l-3 3H13l-2-10c-3-.5-5-2-5-4z"/><circle cx="26" cy="15" r="2.5"/><path d="M15 26v8h6v-8"/></svg>
+          <span class="card__name">Peinado</span>
+          <span class="card__price">$20.000</span>
+        </button>
+
+        <button class="card" type="button">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20h28c0 8-6 13-14 13S6 28 6 20z"/><path d="M28 6 20 20"/><path d="M26 8c3-1 5 1 4 4"/></svg>
+          <span class="card__name">Coloración</span>
+          <span class="card__price">$25.000</span>
+        </button>
+
+        <button class="card" type="button">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 22c-3-4-3-9 0-14 3 5 3 10 0 14z"/><path d="M20 22c-1-5-6-8-11-8 0 6 4 10 11 8zM20 22c1-5 6-8 11-8 0 6-4 10-11 8z"/><path d="M8 30c4 3 8 4 12 4s8-1 12-4"/></svg>
+          <span class="card__name">Tratamientos capilares</span>
+          <span class="card__price">$18.000</span>
+        </button>
+
+        <button class="card" type="button">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="3" width="8" height="34" rx="4" transform="rotate(40 20 20)"/><path d="M13 27l-3 3M24 11l3-3"/></svg>
+          <span class="card__name">Alisado</span>
+          <span class="card__price">$30.000</span>
+        </button>
+
+        <button class="card" type="button">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="3" width="8" height="8" rx="1.5"/><path d="M14 11h12v4l2 3v16a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V18l2-3z"/></svg>
+          <span class="card__name">Manicure</span>
+          <span class="card__price">$12.000</span>
+        </button>
+
+      </div>
+    </main>
+
+    <!-- ===== PANEL DE DETALLE ===== -->
+    <aside class="detail">
+      <div class="detail__photo">
+        <img src="./img/corte de pelo.jpeg" alt="Mujer con cabello ondulado castaño">
+      </div>
+
+      <div class="detail__body">
+        <h2>Corte de cabello</h2>
+        <p>Estilo y personalidad en cada corte. Incluye asesoría personalizada.</p>
+
+        <ul class="meta">
+          <li>
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.5V10l3 2"/></svg>
+            60 minutos
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h6l8 8-5 5-8-8z"/><circle cx="6.5" cy="7.5" r="1"/></svg>
+            Desde $15.000
+          </li>
+        </ul>
+      </div>
+
+      <a href="reservar.html" class="btn-next">Siguiente <span aria-hidden="true">→</span></a>
+    </aside>
+
+  </div>
+</body>
+</html>

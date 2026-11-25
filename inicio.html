@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumy – Salón de belleza</title>
+<link href="./css/lumy.css" rel="stylesheet">
+
+</head>
+<body>
+ <!--inicio de el encabezado-->
+<header>
+  <a href="#" class="logo">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>
+    <span>Lumy<small>SALÓN DE BELLEZA</small></span>
+  </a>
+  <nav>
+    <a href="#" class="activo">Inicio</a>
+    <a href="servicio.html">Servicios</a>
+    <a href="reservar.html">Reservar cita</a>
+    <a href="mis_citas.html">mis_citas</a>
+    <a href="confirmacion.html">confirmacion</a>
+  </nav>
+  <div class="acciones">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    <a href="#" class="btn-sesion">Iniciar sesión</a>
+  </div>
+</header>
+ 
+<section class="hero">
+  <!-- IMAGEN DEL SALÓN: cambia img/salon.jpg por tu archivo -->
+  <img src="img/salon.jpg" alt="Interior del salón Lumy" style="position:absolute; top:0; right:0; width:65%; height:100%; object-fit:cover; z-index:0; -webkit-mask-image:linear-gradient(90deg, transparent, #000 40%); mask-image:linear-gradient(90deg, transparent, #000 40%);">
+  <div class="hero-texto">
+    <h1>Tu belleza,<br>nuestra pasión</h1>
+    <p>Reserva tu cita online en minutos y déjate en manos de expertos.</p>
+    
+    <div class="beneficios">
+      <div class="beneficio">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <div><b>Fácil y rápido</b><span>Reserva en minutos</span></div>
+      </div>
+      <div class="beneficio">
+        <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.3.9-4.5 4.4 1 6.1L12 17l-5.5 3 1-6.1L3 9.5l6.3-.9z"/></svg>
+        <div><b>Profesionales</b><span>Altamente calificados</span></div>
+      </div>
+      <div class="beneficio">
+        <svg viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.3 12 20 12 20z"/></svg>
+        <div><b>Resultados</b><span>Que te harán brillar</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="neon" style="position:relative; z-index:1;">Más que un cambio, una mejor versión</div>
+</section>
+ <!--fin de el encabezado-->
+<section class="servicios" id="servicios">
+  <h2>Nuestros servicios</h2>
+  <p>Aqui hay  ejemplos de nuestros servicios.</p>
+  
+  <div class="grid">
+    <article class="tarjeta">
+      <!-- IMAGEN: cambia img/corte.jpg por tu archivo -->
+      <div class="foto"><img src="./img/corte de pelo.jpeg" alt="Corte de cabello" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+      <div class="info">
+        <h3>Corte de cabello</h3>
+        <p>Estilo y personalidad en cada corte.</p>
+        <div class="precio">Desde $15.000</div>
+        
+      </div>
+    </article>
+    <article class="tarjeta">
+      <!-- IMAGEN: cambia img/peinado.jpg por tu archivo -->
+      <div class="foto"><img src="./img/peinados.jpeg" alt="Peinado" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+      <div class="info">
+        <h3>Peinado</h3>
+        <p>Perfecto para cualquier ocasión.</p>
+        <div class="precio">Desde $20.000</div>
+        
+      </div>
+    </article>
+    <article class="tarjeta">
+      <!-- IMAGEN: cambia img/coloracion.jpg por tu archivo -->
+      <div class="foto"><img src="./img/tinte.jpg" alt="Coloración" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+      <div class="info">
+        <h3>Coloración</h3>
+        <p>Dale vida a tu estilo.</p>
+        <div class="precio">Desde $25.000</div>
+        
+      </div>
+    </article>
+    <article class="tarjeta">
+      <!-- IMAGEN: cambia img/tratamientos.jpg por tu archivo -->
+      <div class="foto"><img src="./img/tratamiento.jpeg" alt="Tratamientos capilares" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+      <div class="info">
+        <h3>Tratamientos capilares</h3>
+        <p>Cuidado profundo para tu cabello.</p>
+        <div class="precio">Desde $18.000</div>
+        
+      </div>
+    </article>
+  </div>
+  
+  <div class="contenedor-siguiente">
+    <a href="servicio.html" class="btn-siguiente">Siguiente</a>
+  </div>
+</section>
+</body>
+</html>

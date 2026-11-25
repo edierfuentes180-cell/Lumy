@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis citas – Lumy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/lumy.css">
+<link rel="stylesheet" href="./css/mis_citas.css">
+</head>
+<body>
+
+<header>
+  <a href="inicio.html" class="logo"><span>Lumy<small>Salón de belleza</small></span></a>
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="servicio.html">Servicios</a>
+    <a href="reservar.html">Reservar cita</a>
+    <a href="mis_citas.html" class="activo">Mis citas</a>
+    <a href="confirmacion.html">confirmación</a>
+  </nav>
+  <div class="acciones">
+    <a href="index.html" class="btn-sesion">Cerrar sesión</a>
+  </div>
+</header>
+
+<main class="citas">
+
+  <div class="citas-encabezado">
+    <div>
+      <h1>Mis citas</h1>
+      <p>Revisa, cambia o cancela tus reservas.</p>
+    </div>
+    <a href="reservar.html" class="btn-cita">Agendar nueva cita</a>
+  </div>
+
+  <section class="citas-bloque" aria-labelledby="titulo-proximas">
+    <h2 id="titulo-proximas">Próximas citas</h2>
+
+    <article class="cita">
+      <div class="cita-fecha">
+        <b>28</b>
+        <span>nov</span>
+      </div>
+      <div class="cita-datos">
+        <h3>Corte de cabello</h3>
+        <p>Profesional: Valentina Rojas</p>
+        <p>Hora: 3:00 p. m.</p>
+        <p class="cita-precio">$15.000</p>
+        <span class="estado confirmada">Confirmada</span>
+      </div>
+      <div class="cita-acciones">
+        <a href="reservar.html" class="btn-sec">Reprogramar</a>
+        <button type="button" class="btn-cancelar">Cancelar cita</button>
+      </div>
+    </article>
+
+    <article class="cita">
+      <div class="cita-fecha">
+        <b>05</b>
+        <span>dic</span>
+      </div>
+      <div class="cita-datos">
+        <h3>Coloración</h3>
+        <p>Profesional: Camila Torres</p>
+        <p>Hora: 10:30 a. m.</p>
+        <p class="cita-precio">$25.000</p>
+        <span class="estado pendiente">Pendiente de confirmar</span>
+      </div>
+      <div class="cita-acciones">
+        <a href="reservar.html" class="btn-sec">Reprogramar</a>
+        <button type="button" class="btn-cancelar">Cancelar cita</button>
+      </div>
+    </article>
+
+    <!-- Si la persona no tiene citas próximas, muestra esto en lugar de las tarjetas:
+    <div class="citas-vacio">
+      <p>Aún no tienes citas programadas.</p>
+      <a href="reservar.html" class="btn-cita">Reservar mi primera cita</a>
+    </div>
+    -->
+  </section>
+
+  <section class="citas-bloque" aria-labelledby="titulo-historial">
+    <h2 id="titulo-historial">Historial</h2>
+
+    <article class="cita pasada">
+      <div class="cita-fecha">
+        <b>12</b>
+        <span>nov</span>
+      </div>
+      <div class="cita-datos">
+        <h3>Peinado</h3>
+        <p>Profesional: Valentina Rojas</p>
+        <p>Hora: 4:00 p. m.</p>
+        <p class="cita-precio">$20.000</p>
+        <span class="estado completada">Completada</span>
+      </div>
+      <div class="cita-acciones">
+        <a href="reservar.html" class="btn-sec">Reservar de nuevo</a>
+      </div>
+    </article>
+
+    <article class="cita pasada">
+      <div class="cita-fecha">
+        <b>30</b>
+        <span>oct</span>
+      </div>
+      <div class="cita-datos">
+        <h3>Tratamientos capilares</h3>
+        <p>Profesional: Camila Torres</p>
+        <p>Hora: 11:00 a. m.</p>
+        <p class="cita-precio">$18.000</p>
+        <span class="estado cancelada">Cancelada</span>
+      </div>
+      <div class="cita-acciones">
+        <a href="reservar.html" class="btn-sec">Reservar de nuevo</a>
+      </div>
+    </article>
+  </section>
+
+  <div class="contenedor-siguiente">
+    <a href="confirmacion.html" class="btn-siguiente">Siguiente</a>
+  </div>
+
+</main>
+
+</body>
+</html>

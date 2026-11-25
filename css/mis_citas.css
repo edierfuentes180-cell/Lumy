@@ -1,0 +1,124 @@
+/* Mis citas – usa las variables (:root) definidas en lumy.css */
+
+.citas {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* Encabezado */
+.citas-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.citas-encabezado h1 { font-size: 38px; margin-bottom: 6px; }
+.citas-encabezado p { color: var(--gris); }
+.citas-encabezado .btn-cita { padding: 12px 28px; font-size: 14px; }
+
+/* Bloques: próximas e historial */
+.citas-bloque { margin-bottom: 44px; }
+.citas-bloque h2 { font-size: 26px; margin-bottom: 16px; }
+
+/* Tarjeta de cita */
+.cita {
+  display: grid;
+  grid-template-columns: 76px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+/* Bloque de fecha */
+.cita-fecha {
+  background: var(--rosa-claro);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0;
+}
+.cita-fecha b {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  line-height: 1;
+}
+.cita-fecha span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rosa-oscuro);
+}
+
+/* Datos */
+.cita-datos h3 { font-size: 17px; margin-bottom: 4px; }
+.cita-datos p { font-size: 13px; color: var(--gris); line-height: 1.5; }
+.cita-datos .cita-precio { font-weight: 600; color: var(--negro); margin-top: 2px; }
+
+/* Estado */
+.estado {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.estado.confirmada { background: #e3f1e6; color: #2f6b3f; }
+.estado.pendiente  { background: #fbeccb; color: #8a5a00; }
+.estado.completada { background: var(--rosa-claro); color: var(--rosa-oscuro); }
+.estado.cancelada  { background: #ececec; color: var(--gris); }
+
+/* Botones */
+.cita-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 150px;
+}
+.btn-sec,
+.btn-cancelar {
+  display: block;
+  text-align: center;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--rosa);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn-sec { background: var(--rosa); color: #fff; }
+.btn-sec:hover { background: var(--rosa-oscuro); border-color: var(--rosa-oscuro); }
+.btn-cancelar { background: transparent; color: var(--rosa); }
+.btn-cancelar:hover { background: var(--rosa); color: #fff; }
+
+button:focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; }
+
+/* Citas pasadas: más discretas */
+.cita.pasada .cita-fecha { background: #efe9e7; }
+.cita.pasada .cita-fecha span { color: var(--gris); }
+
+/* Sin citas */
+.citas-vacio {
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+.citas-vacio p { color: var(--gris); margin-bottom: 18px; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .citas-encabezado h1 { font-size: 32px; }
+  .cita { grid-template-columns: 64px 1fr; gap: 14px; }
+  .cita-acciones { grid-column: 1 / -1; flex-direction: row; }
+  .cita-acciones > * { flex: 1; }
+}

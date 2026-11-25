@@ -1,0 +1,271 @@
+/* ==========================================================
+   Lumy · Paso 2: Fecha, hora y profesional
+   Se carga DESPUÉS de servicio.css y usa sus variables
+   (--accent, --surface, --line, --muted, --accent-soft, --radius)
+   ========================================================== */
+
+/* ---------- Radios ocultos (el estado lo muestra su etiqueta) ---------- */
+.pick,
+.pro-pick {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/* ---------- Estructura: calendario + horarios ---------- */
+.booking {
+  display: grid;
+  grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+/* ---------- Calendario ---------- */
+.calendar {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.calendar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calendar__title { font-size: 15px; font-weight: 600; }
+
+.calendar__nav {
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  background: transparent;
+  border: 0; border-radius: 50%;
+  color: #3b3330;
+  transition: background .15s;
+}
+.calendar__nav:hover { background: var(--accent-soft); }
+
+.calendar__weekdays,
+.calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+}
+
+.calendar__weekdays {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.calendar__weekdays span { padding: 4px 0; }
+
+.calendar__days { row-gap: 6px; }
+
+/* Día (etiqueta del radio) */
+.day {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s, color .15s, transform .1s;
+}
+.day:hover { background: var(--accent-soft); }
+.day:active { transform: scale(.94); }
+
+/* Días del mes anterior: no se pueden elegir */
+.day--out { color: #c9c1bd; cursor: default; }
+.day--out:hover { background: transparent; }
+
+/* Día elegido: cambia de color al presionarlo */
+.pick:checked + .day {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Horarios ---------- */
+.slots {
+  min-width: 0;
+  margin: 0; padding: 0;
+  border: 0;
+}
+
+.slots legend {
+  margin-bottom: 14px;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.slots__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.slot {
+  display: grid; place-items: center;
+  padding: 16px 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s, color .15s, border-color .15s, transform .1s;
+}
+.slot:hover { border-color: var(--accent); background: var(--accent-soft); }
+.slot:active { transform: scale(.97); }
+
+/* Horario elegido: cambia de color al presionarlo */
+.pick:checked + .slot {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Profesionales ---------- */
+.pros { margin-top: 36px; }
+
+.pros h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pros__sub {
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Tarjetas una encima de otra, a todo el ancho */
+.pros__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.pro {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color .15s, box-shadow .15s, transform .1s;
+}
+.pro:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+.pro:active { transform: scale(.995); }
+
+.pro__foto {
+  width: 180px;
+  min-height: 150px;
+  flex-shrink: 0;
+  object-fit: cover;
+  background: var(--accent-soft);
+}
+
+.pro__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 20px;
+}
+
+.pro__nombre { font-size: 16px; }
+.pro__esp    { font-size: 14px; color: var(--muted); }
+.pro__extra  { font-size: 13px; color: var(--accent); }
+.pro__precio { margin-top: 4px; font-size: 13px; font-weight: 700; }
+
+/* Botón a la derecha, como el "Reservar" de los servicios */
+.pro__boton {
+  align-self: center;
+  margin-right: 20px;
+  padding: 10px 28px;
+  background: var(--accent);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  transition: filter .15s;
+}
+
+/* Profesional elegido */
+.pro-pick:checked + .pro {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .12);
+}
+.pro-pick:checked + .pro .pro__boton { filter: brightness(.88); font-size: 0; }
+.pro-pick:checked + .pro .pro__boton::after {
+  content: "✓ Seleccionado";
+  font-size: 14px;
+}
+
+/* Foco visible con teclado */
+.pick:focus-visible + .day,
+.pick:focus-visible + .slot,
+.pro-pick:focus-visible + .pro {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Botón Siguiente ---------- */
+.contenedor-siguiente {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-siguiente {
+  display: inline-block;
+  padding: 12px 44px;
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter .15s;
+}
+.btn-siguiente:hover { filter: brightness(.88); }
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .booking { grid-template-columns: minmax(300px, 400px) minmax(0, 1fr); gap: 24px; }
+}
+
+@media (max-width: 760px) {
+  .booking { grid-template-columns: 1fr; }
+  .calendar { padding: 16px; }
+  .day { width: 36px; height: 36px; }
+  .slots__grid { gap: 10px; }
+  .slot { padding: 14px 6px; }
+
+  .pro { flex-direction: column; }
+  .pro__foto { width: 100%; height: 180px; }
+  .pro__boton { align-self: stretch; margin: 0 20px 16px; text-align: center; }
+}
